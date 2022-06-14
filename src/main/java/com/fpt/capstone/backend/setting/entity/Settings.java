@@ -3,6 +3,7 @@ package com.fpt.capstone.backend.setting.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "settings")
@@ -10,6 +11,7 @@ import javax.persistence.*;
 public class Settings {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "type_id")
@@ -22,19 +24,19 @@ public class Settings {
     private String value;
 
     @Column(name = "display_order")
-    private Byte displayOrder;
+    private Integer displayOrder;
 
     @Column(name = "status")
     private String status;
 
     @Column(name = "created")
-    private java.sql.Timestamp created;
+    private Date created;
 
     @Column(name = "created_by")
     private Integer createdBy;
 
     @Column(name = "modified")
-    private java.sql.Timestamp modified;
+    private Date modified;
 
     @Column(name = "modified_by")
     private Integer modifiedBy;
